@@ -1,5 +1,7 @@
 use 1404002030_progresstracker_v1;
 
+# Gömul útgáfa.  Gat ekki náð í nýja því þetta tækniskólaský virkar eiginlega aldrei.  Mun breyta á mánudaginn
+
 # 1
 
 delimiter &&
