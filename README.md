@@ -2,4 +2,4 @@
 
 Öll skilaverkefnin úr GAGN
 
-[API úr 4](https://github.com/gudmunduroh/GAGNVerkefni4/)
+[API úr 4](https://github.com/gudmunduroh/GAGNVerkefn4)
