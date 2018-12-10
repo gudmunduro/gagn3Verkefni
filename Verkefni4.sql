@@ -6,9 +6,9 @@ delimiter &&
 
 drop procedure if exists createSchool &&
 
-create procedure createSchool(id int(11), schoolName varchar(75))
+create procedure createSchool(id int(11), sname varchar(75))
 begin
-	insert into Schools(schoolID, schoolName) values (id, schoolName);
+	insert into Schools(schoolID, schoolName) values (id, sname);
 end &&
 
 delimiter ;
@@ -62,9 +62,9 @@ delimiter &&
 
 drop procedure if exists createStudent &&
 
-create procedure createStudent(studentName varchar(50), credits int(4), trackID int(11))
+create procedure createStudent(sname varchar(50), scredits int(4), track int(11))
 begin
-	insert into students (studentName, credits, trackID) values (studentName, credits, trackID);
+	insert into students (studentName, credits, trackID) values (sname, scredits, track);
 end &&
 
 delimiter ;
@@ -123,9 +123,9 @@ delimiter &&
 
 drop procedure if exists createCourse &&
 
-create procedure createCourse(courseNumber char(10), courseName varchar(75), courseCredits tinyint(4))
+create procedure createCourse(cnumber char(10), cname varchar(75), ccredits tinyint(4))
 begin
-	insert into courses (courseNumber, courseName, courseCredits) values (courseNumber, courseName, courseCredits);
+	insert into courses (courseNumber, courseName, courseCredits) values (cnumber, cname, ccredits);
 end &&
 
 delimiter ;
@@ -133,9 +133,9 @@ delimiter &&
 
 drop procedure if exists selectCourse &&
 
-create procedure selectCourse(courseNumber char(10))
+create procedure selectCourse(cnumber char(10))
 begin
-	select * from courses where courseNumber = courseNumber;
+	select * from courses where courseNumber = cnumber;
 end &&
 
 delimiter ;
@@ -143,9 +143,9 @@ delimiter &&
 
 drop procedure if exists deleteCourse &&
 
-create procedure deleteCourse(courseNumber char(10))
+create procedure deleteCourse(cnumber char(10))
 begin
-	delete from courses where courseNumber = courseNumber;
+	delete from courses where courseNumber = cnumber;
 end &&
 
 delimiter ;
@@ -153,12 +153,12 @@ delimiter &&
 
 drop procedure if exists changeCourseValue &&
 
-create procedure changeCourseValue(courseNumber char(10), valueToChange varchar(10), changeTo varchar(50))
+create procedure changeCourseValue(cnumber char(10), valueToChange varchar(10), changeTo varchar(50))
 begin
 	CASE valueToChange
-		WHEN "courseNumber" THEN update courses set courseNumber = changeTo where courseNumber = courseNumber;
-        WHEN "courseName" THEN update courses set courseName = changeTo where courseNumber = courseNumber;
-		WHEN "courseCredits" THEN update courses set courseCredits = changeTo * 1 where courseNumber = courseNumber;
+		WHEN "courseNumber" THEN update courses set courseNumber = changeTo where courseNumber = cnumber;
+        WHEN "courseName" THEN update courses set courseName = changeTo where courseNumber = cnumber;
+		WHEN "courseCredits" THEN update courses set courseCredits = changeTo * 1 where courseNumber = cnumber;
 	END CASE;
 end &&
 
